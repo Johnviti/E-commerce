@@ -8,7 +8,9 @@
     @yield('links')
 </head>
 <body>
-    @yield('content')
+    <main>
+        @yield('content')
+    </main>
     @yield('scripts')
 </body>
 </html>
