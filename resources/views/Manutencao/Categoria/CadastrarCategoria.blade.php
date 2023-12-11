@@ -1,5 +1,5 @@
 @extends('layouts.main')
-@section('title', 'Cadastrar Produto')
+@section('title', 'Cadastrar Categoria')
 @section('links')
     <link rel="stylesheet" href="{{asset('css/Manutencao/Produto/CadastrarProduto.css')}}">
     <link rel="stylesheet" href="{{asset('css/BotoesPadrao.css')}}">
@@ -9,36 +9,15 @@
 @section('content')
 <div class="container-principal">
     <div class="form-container">
-        <form action="{{route('createProduto')}}" method="POST">
+        <form action="{{route('createCategoria')}}" method="POST">
             @csrf
-            <div class="form__group field">
-                <input type="input" class="form__field" placeholder="codigo" name="codigo" required>
-                <label for="codigo" class="form__label">Código</label>
-            </div>
             <div class="form__group field">
                 <input type="input" class="form__field" placeholder="descricao" name="descricao" required>
                 <label for="descricao" class="form__label">Descrição</label>
             </div>
             <div class="form__group field">
-                <input type="input" class="form__field" placeholder="unidade" name="unidade" required>
-                <label for="unidade" class="form__label">Unidade</label>
-            </div>
-            <div class="form__group field">
-                <input type="input" class="form__field" placeholder="peso" name="peso" required>
-                <label for="peso" class="form__label">Peso</label>
-            </div>
-            <div class="form__group field">
-                <input type="input" class="form__field" placeholder="preco" name="preco" required>
-                <label for="preco" class="form__label">Preço</label>
-            </div>
-            {{-- categorias --}}
-            <div class="form__group field">
-                <select name="id_categoria_produto" id="" class="form__field">
-                    <option disabled>Selecione uma categoria</option>
-                    @foreach ($categorias as $categoria)
-                        <option value="{{$categoria->id}}">{{$categoria->descricao}}</option>
-                    @endforeach
-                </select>
+                <input type="input" class="form__field" placeholder="observacao" name="observacao" required>
+                <label for="observacao" class="form__label">Observação</label>
             </div>
             <div class="form_button">
                 <button type="submit">Cadastrar</button>

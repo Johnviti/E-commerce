@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoriaController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProdutoController;
 
@@ -16,8 +17,13 @@ use App\Http\Controllers\ProdutoController;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('index');
 
-Route::get('/produto', [ProdutoController::class, 'index'])->name('index');
+Route::get('/produto', [ProdutoController::class, 'Produto'])->name('Produto');
 Route::get('/cadastrar-produto', [ProdutoController::class, 'cadastrarProduto'])->name('cadastrarProduto');
-Route::post('/cadastro-produto', [ProdutoController::class, 'create'])->name('create');
+Route::post('/cadastro-produto', [ProdutoController::class, 'createProduto'])->name('createProduto');
+
+
+Route::get('/categoria', [CategoriaController::class, 'Categoria'])->name('indexCategoria');
+Route::get('/cadastrar-categoria', [CategoriaController::class, 'cadastrarCategoria'])->name('cadastrarCategoria');
+Route::post('/cadastro-categoria', [CategoriaController::class, 'createCategoria'])->name('createCategoria');

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\ProdutoRequest;
 use Illuminate\Http\Request;
 use App\Http\Services\ProdutoService;
+use App\Models\Categoria;
 
 
 class ProdutoController extends Controller
@@ -31,19 +32,19 @@ class ProdutoController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create(ProdutoRequest $request)
-    {
-        $dadosProduto = $request->validated();
-        $dadosProduto = $this->productService->create($dadosProduto);
-        return redirect()->route('index')->with('success', 'Produto cadastrado com sucesso!');
-    }
+    public function createProduto(ProdutoRequest $request){       
+            $dadosProduto = $request->validated();
+            $dadosProduto = $this->productService->create($dadosProduto);
+            return redirect()->route('index')->with('success', 'Produto cadastrado com sucesso!');
+        }
 
     /**
      * Store a newly created resource in storage.
      */
     public function cadastrarProduto()
-    {
-        return view('Manutencao.Produto.CadastrarProduto');
+    {   
+        $categorias = Categoria::all();
+        return view('Manutencao.Produto.CadastrarProduto', ['categorias' => $categorias]);
     }
 
 
