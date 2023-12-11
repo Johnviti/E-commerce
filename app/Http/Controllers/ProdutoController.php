@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ProdutoRequest;
 use Illuminate\Http\Request;
+use App\Http\Services\ProdutoService;
 
 
 class ProdutoController extends Controller
@@ -16,6 +17,11 @@ class ProdutoController extends Controller
     // public function __construct(Type $var = null) {
     //     $this->var = $var;
     // }
+    protected $productService;
+
+    public function __construct( ProdutoService $productService) {
+        $this->productService = $productService;
+    }
 
     public function index()
     {
@@ -28,7 +34,8 @@ class ProdutoController extends Controller
     public function create(ProdutoRequest $request)
     {
         $dadosProduto = $request->validated();
-
+        $dadosProduto = $this->productService->create($dadosProduto);
+        return redirect()->route('index')->with('success', 'Produto cadastrado com sucesso!');
     }
 
     /**
@@ -57,7 +64,7 @@ class ProdutoController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        
     }
 
     /**
