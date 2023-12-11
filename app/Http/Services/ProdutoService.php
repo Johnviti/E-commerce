@@ -8,4 +8,9 @@ class ProdutoService{
         $dadosProduto = Produto::create($dadosProduto);
         return $dadosProduto;
     }
+
+    public function update($dadosProduto, $id){
+        $dadosProduto = Produto::where('id', $id)->update($dadosProduto);
+        return $dadosProduto;
+    }
 }
