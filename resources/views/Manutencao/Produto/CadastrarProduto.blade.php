@@ -34,7 +34,7 @@
             {{-- categorias --}}
             <div class="form__group field">
                 <select name="id_categoria_produto" id="" class="form__field">
-                    <option disabled>Selecione uma categoria</option>
+                    <option disabled selected>Selecione uma categoria</option>
                     @foreach ($categorias as $categoria)
                         <option value="{{$categoria->id}}">{{$categoria->descricao}}</option>
                     @endforeach
@@ -42,7 +42,7 @@
             </div>
             <div class="form_button">
                 <button type="submit">Cadastrar</button>
-                <button type="button" data-bs-toggle="modal" data-bs-target="#modalCadastrarProduto">
+                <button class="btn-cancelar" type="button" data-bs-toggle="modal" data-bs-target="#modalCadastrarProduto">
                     Cancelar
                 </button>
             </div>

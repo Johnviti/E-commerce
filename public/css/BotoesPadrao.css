@@ -1,5 +1,4 @@
 button {
-    --color: #0077ff;
     font-family: inherit;
     display: inline-block;
     width: 6em;
@@ -9,8 +8,8 @@ button {
     margin: 20px;
     font-size: 17px;
     z-index: 1;
-    color: var(--color);
-    border: 2px solid var(--color);
+    color: var(--azul);
+    border: 2px solid var(--azul);
     border-radius: 6px;
     position: relative;
   }
@@ -18,7 +17,7 @@ button {
   button::before {
     position: absolute;
     content: "";
-    background: var(--color);
+    background: var(--azul);
     width: 150px;
     height: 200px;
     z-index: -1;
@@ -26,7 +25,7 @@ button {
   }
   
   button:hover {
-    color: white;
+    color: var(--branco);
   }
   
   button:before {
@@ -46,4 +45,14 @@ button {
 
   .form_button{
     padding-top: 10px;
+  }
+
+  .btn-cancelar{
+    color: var(--vermelho);
+    color: var(--vermelho);
+    border: 2px solid var(--vermelho);
+  }
+
+  .btn-cancelar::before{
+    background: var(--vermelho);
   }
