@@ -9,6 +9,11 @@ class EcommerceController extends Controller
 {
     public function index()
     {   
+        return view('Index');
+    }
+
+    public function welcome()
+    {   
         $produtos = Produto::all();
         return view('welcome', ['produtos' => $produtos]);
     }
