@@ -12,6 +12,11 @@ class EcommerceController extends Controller
         return view('Index');
     }
 
+    public function cadastrar()
+    {   
+        return view('Cadastrar');
+    }
+
     public function welcome()
     {   
         $produtos = Produto::all();
