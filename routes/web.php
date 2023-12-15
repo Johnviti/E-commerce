@@ -17,6 +17,7 @@ use App\Http\Controllers\EcommerceController;
 */
 
 Route::get('/', [EcommerceController::class, 'index'])->name('index');
+Route::get('/cadastrar', [EcommerceController::class, 'cadastrar'])->name('cadastrar');
 
 Route::get('/produto', [ProdutoController::class, 'Produto'])->name('Produto');
 Route::get('/cadastrar-produto', [ProdutoController::class, 'cadastrarProduto'])->name('cadastrarProduto');
