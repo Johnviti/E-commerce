@@ -13,4 +13,9 @@ class ProdutoService{
         $dadosProduto = Produto::where('id', $id)->update($dadosProduto);
         return $dadosProduto;
     }
+
+    public function find($id){
+        $produto = Produto::find($id);
+        return $produto;
+    }
 }

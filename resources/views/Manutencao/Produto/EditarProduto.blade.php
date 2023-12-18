@@ -9,26 +9,26 @@
 @section('content')
 <div class="container-principal">
     <div class="form-container">
-        <form action="{{route('edicaoProduto')}}" method="POST">
+        <form action="{{route( 'edicaoProduto',[$produto->id] )}}" method="POST">
             @csrf
             <div class="form__group field">
-                <input type="input" class="form__field" placeholder="codigo" name="codigo" required>{{$produto->codigo}}
+                <input type="input" class="form__field" placeholder="codigo" name="codigo" required value="{{$produto->codigo}}">
                 <label for="codigo" class="form__label">Código</label>
             </div>
             <div class="form__group field">
-                <input type="input" class="form__field" placeholder="descricao" name="descricao" required>{{$produto->descricao}}
+                <input type="input" class="form__field" placeholder="descricao" name="descricao" required value="{{$produto->descricao}}">
                 <label for="descricao" class="form__label">Descrição</label>
             </div>
             <div class="form__group field">
-                <input type="input" class="form__field" placeholder="unidade" name="unidade" required>{{$produto->unidade}}
+                <input type="input" class="form__field" placeholder="unidade" name="unidade" required value="{{$produto->unidade}}">
                 <label for="unidade" class="form__label">Unidade</label>
             </div>
             <div class="form__group field">
-                <input type="input" class="form__field" placeholder="peso" name="peso" required>{{$produto->peso}}
+                <input type="input" class="form__field" placeholder="peso" name="peso" required value="{{$produto->peso}}">
                 <label for="peso" class="form__label">Peso</label>
             </div>
             <div class="form__group field">
-                <input type="input" class="form__field" placeholder="preco" name="preco" required>{{$produto->preco}}
+                <input type="input" class="form__field" placeholder="preco" name="preco" required value="{{$produto->preco}}">
                 <label for="preco" class="form__label">Preço</label>
             </div>
             {{-- categorias --}}
