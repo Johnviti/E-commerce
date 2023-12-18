@@ -22,7 +22,8 @@ Route::get('/cadastrar', [EcommerceController::class, 'cadastrar'])->name('cadas
 Route::get('/produto', [ProdutoController::class, 'Produto'])->name('Produto');
 Route::get('/cadastrar-produto', [ProdutoController::class, 'cadastrarProduto'])->name('cadastrarProduto');
 Route::post('/cadastro-produto', [ProdutoController::class, 'createProduto'])->name('createProduto');
-
+Route::get('/editar-produto/{id}', [ProdutoController::class, 'editarProduto'])->name('editarProduto');
+Route::post('/edicao-produto/{id}', [ProdutoController::class, 'edicaoProduto'])->name('edicaoProduto');
 
 Route::get('/categoria', [CategoriaController::class, 'Categoria'])->name('indexCategoria');
 Route::get('/cadastrar-categoria', [CategoriaController::class, 'cadastrarCategoria'])->name('cadastrarCategoria');

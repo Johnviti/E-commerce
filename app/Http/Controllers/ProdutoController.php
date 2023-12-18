@@ -48,8 +48,18 @@ class ProdutoController extends Controller
     }
 
 
-    public function store(Request $request)
-    {
+    public function editarProduto($id)
+    {   
+        $produto = $this->productService->find($id);
+        $categorias = Categoria::all();
+        return view('Manutencao.Produto.EditarProduto', ['produto' => $produto, 'categorias' => $categorias]);
+    }
+
+    public function edicaoProduto(ProdutoRequest $request, $id)
+    {   
+        $dadosProduto = $request->validated();
+        $dadosProduto = $this->productService->update($dadosProduto, $id);
+        return redirect()->route('index')->with('success', 'Produto editado com sucesso!');
     }
 
     /**

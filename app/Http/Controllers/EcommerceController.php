@@ -16,6 +16,7 @@ class EcommerceController extends Controller
     {   
         return view('Cadastrar');
     }
+    
 
     public function welcome()
     {   
